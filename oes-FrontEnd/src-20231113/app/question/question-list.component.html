@@ -1,0 +1,66 @@
+<div class="card">
+    <div class="card-header">
+        {{ pageTitle }}
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-1"> Filter by: </td>
+                    <td class="col-md-2"> <input type="text" [(ngModel)]="listFilter"/> </td>
+                    <td class="col-md-5">
+                        <!-- <h4>Filtered by: {{listFilter}}</h4>  -->
+                        <div class="row" *ngIf="listFilter">
+                            <div class="col-md-6">
+                                <h4>Filtered by: {{listFilter}}</h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="col-md-4" style="text-align:right">
+                        <button class="btn btn-primary btn-space" style="width:100px;" (click)="addQuestion()"> Add New
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped table-bordered" *ngIf="questions && questions.length">
+            <thead>
+                <tr>
+                    <th class="text-center"> ID</th>
+                    <th class="text-center"> Question</th>
+                    <th class="text-center"> Choice1 </th>
+                    <th class="text-center"> Choice2 </th>
+                    <th class="text-center"> Choice3 </th>
+                    <th class="text-center"> Choice4 </th>
+                    <th class="text-center"> Actions </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr
+                    *ngFor="let t of filteredQuestions | paginate:{itemsPerPage:itemsPerPage, currentPage:page, totalItems:totalQuestion}">
+                    <td class="col-md-1"> {{ t.id }} </td>
+                    <td class="col-md-1"> {{ t.question }} </td>
+                    <td class="col-md-2"> {{ t.choice1 }}</td>
+                    <td class="col-md-2"> {{ t.choice2 }} </td>
+                    <td class="col-md-2"> {{ t.choice3 }} </td>
+                    <td class="col-md-2"> {{ t.choice4 }} </td>
+                    <td class="col-md-2" style="text-align:center">
+                        <button (click)="updateQuestion(t.id)" class="btn btn-success btn-sm btn-space"
+                            style="width:80px;"> Update </button>
+                        <button (click)="deleteQuestion(t.id)" class="btn btn-danger btn-sm btn-space"
+                            style="width:80px;"> Delete </button>
+                        <!-- <button (click)="questionDetails(t.id)" class="btn btn-info btn-sm btn-space"
+                            style="width:80px;"> View </button> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+            <pagination-controls (pageChange)="page=$event" previousLabel="Prev" nextLabel="Next"></pagination-controls>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="errorMessage" class="alert alert-danger">
+    Error: {{ errorMessage }}
+</div>

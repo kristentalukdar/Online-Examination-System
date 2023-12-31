@@ -1,0 +1,14 @@
+.img-responsive{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.logo {
+  position:absolute;
+  right:25%;
+  top:0px;
+  width:30%;
+  height:auto;
+  }
+  

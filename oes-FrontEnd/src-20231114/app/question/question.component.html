@@ -1,0 +1,145 @@
+<div class="card">
+    <div class="card-header">
+        Question Details
+    </div>
+    <div class="card-body">
+        <form novalidate [formGroup]="questionForm">
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="questionId">Subject</label>
+                <div class="col-md-8">
+                    <select class="form-select" aria-label="Default select example" (change)="onSubjectSelected($event)">
+                        <option *ngFor="let subject of subjects" value="{{ subject.id }}"> {{ subject.name }} </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="questionId">Question</label>
+                <div class="col-md-8">
+                    <textarea class="form-control" id="questionId" type="text" placeholder="Question"
+                        formControlName="question"> </textarea>
+                    <!-- <span *ngIf="questionForm.get('question')!.errors?.['required']">
+                        Please enter the Question
+                    </span>
+                    <span *ngIf="questionForm.get('question')!.errors?.['minlength']">
+                        Minimum of 1 character
+                    </span> -->
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="choice1Id">Choice 1</label>
+                <div class="col-md-6">
+                    <textarea class="form-control" id="choice1Id" type="text" placeholder="Choice 1"
+                        formControlName="choice1"></textarea>
+                    <!-- <span *ngIf="questionForm.get('choice1')!.errors?.['required']">
+                        Please enter First option
+                    </span>
+                    <span *ngIf="questionForm.get('choice1')!.errors?.['minlength']">
+                        Minimum of 1 character
+                    </span> -->
+                </div>
+                <div class="col-md-2">
+                    <input class="form-check-input" type="checkbox" id="idchoice1Correct"
+                        formControlName="choice1Correct">
+                    <label class="form-check-label" for="flexCheckIndeterminate">
+                        Correct Choice
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="choice2Id">Choice 2</label>
+                <div class="col-md-6">
+                    <textarea class="form-control" id="choice2Id" type="text" placeholder="Choice 2"
+                        formControlName="choice2"></textarea>
+                    <!-- <span *ngIf="questionForm.get('choice2')!.errors?.['required']">
+                        Please enter Second option
+                    </span>
+                    <span *ngIf="questionForm.get('choice2')!.errors?.['minlength']">
+                        Minimum of 1 character
+                    </span> -->
+                </div>
+                <div class="col-md-2">
+                    <input class="form-check-input" type="checkbox" id="idchoice2Correct"
+                        formControlName="choice2Correct">
+                    <label class="form-check-label" for="flexCheckIndeterminate">
+                        Correct Choice
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="choice3Id">Choice 3</label>
+                <div class="col-md-6">
+                    <textarea class="form-control" id="choice3Id" type="text" placeholder="Choice 3"
+                        formControlName="choice3"></textarea>
+                    <!-- <span *ngIf="questionForm.get('choice3')!.errors?.['required']">
+                        Please enter Third option
+                    </span>
+                    <span *ngIf="questionForm.get('choice3')!.errors?.['minlength']">
+                        Minimum of 1 character
+                    </span> -->
+                </div>
+                <div class="col-md-2">
+                    <input class="form-check-input" type="checkbox" id="idchoice3Correct"
+                        formControlName="choice3Correct">
+                    <label class="form-check-label" for="flexCheckIndeterminate">
+                        Correct Choice
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="choice4Id">Choice 4</label>
+                <div class="col-md-6">
+                    <textarea class="form-control" id="choice4Id" type="text" placeholder="Choice 4"
+                        formControlName="choice4"></textarea>
+                    <!-- <span *ngIf="questionForm.get('choice4')!.errors?.['required']">
+                        Please enter Fourth option
+                    </span>
+                    <span *ngIf="questionForm.get('choice4')!.errors?.['minlength']">
+                        Minimum of 1 character
+                    </span> -->
+                </div>
+                <div class="col-md-2">
+                    <input class="form-check-input" type="checkbox" id="idchoice4Correct"
+                        formControlName="choice4Correct">
+                    <label class="form-check-label" for="flexCheckIndeterminate">
+                        Correct Choice
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <div class="offset-md-2 col-md-6">
+                    <button class="btn btn-primary btn-space" style="width:80px;" type="submit"
+                        [title]="questionForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                        [disabled]="!questionForm.valid">
+                        Save
+                    </button>
+                    <button class="btn btn-secondary btn-space" style="width:80px;" type="button"
+                        title="Cancel your edits" [routerLink]="['/subjectlist']">
+                        Cancel
+                    </button>
+                    <button (click)="deleteQuestion()" class="btn btn-warning btn-space" style="width:80px"
+                        type="button" title="Delete this sbject">
+                        Delete
+                    </button>
+                </div>
+            </div>
+            <!-- <div class="form-group row mb-2">
+                <div class="offset-md-5 col-md-4">
+                    <button class="btn btn-primary mr-3" type="submit" style="width:80px"
+                        [title]="questionForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                        [disabled]="!questionForm.valid">
+                        Save
+                    </button>
+                    <button class="btn btn-outline-secondary mr-3" type="button" style="width:80px">
+                        Cancel
+                    </button>
+                </div>
+            </div> -->
+        </form>
+    </div>
+</div>

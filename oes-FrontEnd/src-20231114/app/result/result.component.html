@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header">
+        Result Details
+    </div>
+    <div class="card-body">
+        <form novalidate [formGroup]="resultForm">
+            
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="studentIdId">Student ID</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="studentIdId" type="text" placeholder="Student ID (optional)" formControlName="studentId"/>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="subjectNameId">Subject Name</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="subjectNameId" type="text" placeholder="Subject Name(required)" formControlName="subjectName"/>
+                </div>
+            </div>                      
+        </form>
+    </div>
+</div>

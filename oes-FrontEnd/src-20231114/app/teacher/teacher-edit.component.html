@@ -1,0 +1,174 @@
+<div class="card">
+    <div class="card-header">
+        Teacher Details
+    </div>
+    <div class="card-body">
+        <form novalidate (ngSubmit)="onSubmit()" [formGroup]="teacherForm">
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="registrationnoid">Teacher ID</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="registrationnoId" type="text"
+                        formControlName="registrationno" [ngClass]="{'is-invalid': (teacherForm.get('registrationNo')?.touched ||
+                        teacherForm.get('registrationNo')?.dirty) &&
+                        !teacherForm.get('registrationNo')?.valid }" />
+                    <span class="invalid-feedback">
+                        <span *ngIf="teacherForm.get('registrationno')!.errors?.['required']">
+                            Please enter Teacher ID
+                        </span>
+                        <span *ngIf="teacherForm.get('registrationno')!.errors?.['minlength']">
+                            Teacher ID should be of length 10
+                        </span>
+                        <span *ngIf="teacherForm.get('registrationno')!.errors?.['maxlength']">
+                            Teacher ID should be of length 10
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="form-group row mb-2">
+                    <label class="col-md-2 col-form-label" for="titleId">Title</label>
+                    <div class="col-md-8">
+                        <select class="form-select" aria-label="Default select example"
+                            (change)="onTitleSelected($event)">
+                            <option *ngFor="let title of titles" value="{{ title }}"> {{ title }} </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="firstNameId">First Name</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="firstNameId" type="text"
+                        formControlName="firstName" [ngClass]="{'is-invalid': (teacherForm.get('firstName')?.touched ||
+                        teacherForm.get('firstName')?.dirty) &&
+                        !teacherForm.get('firstName')?.valid }" />
+                    <span class="invalid-feedback">
+                        <span *ngIf="teacherForm.get('firstName')!.errors?.['required']">
+                            Please enter First Name
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="middleNameId">Middle Name</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="middleNameId" type="text"
+                        formControlName="middleName" [ngClass]="{'is-invalid': (teacherForm.get('middleName')?.touched ||
+                        teacherForm.get('middleName')?.dirty) &&
+                        !teacherForm.get('middleName')?.valid }" />
+
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="lastNameId">Last Name</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="lastNameId" type="text"
+                        formControlName="lastName" [ngClass]="{'is-invalid': (teacherForm.get('lastName')?.touched ||
+                        teacherForm.get('lastName')?.dirty) &&
+                        !teacherForm.get('lastName')?.valid }" />
+                    <span class="invalid-feedback">
+                        <span *ngIf="teacherForm.get('lastName')!.errors?.['required']">
+                            Please enter Last Name
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="contactNoId">Contact Number</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="contactNoId" type="text"
+                        formControlName="contactNo" [ngClass]="{'is-invalid': (teacherForm.get('contactNo')?.touched ||
+                        teacherForm.get('contactNo')?.dirty) &&
+                        !teacherForm.get('contactNo')?.valid }" />
+                    <span class="invalid-feedback">
+                        <span *ngIf="teacherForm.get('contactNo')!.errors?.['required']">
+                            Please enter Contact No
+                        </span>
+                        <span *ngIf="teacherForm.get('contactNo')!.errors?.['minlength']">
+                            Contact No should be of length 10
+                        </span>
+                        <span *ngIf="teacherForm.get('contactNo')!.errors?.['maxlength']">
+                            Contact No should be of length 10
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="emailIdId">Email ID</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="emailIdId" type="text"
+                        formControlName="emailId" [ngClass]="{'is-invalid': (teacherForm.get('emailId')?.touched ||
+                        teacherForm.get('emailId')?.dirty) &&
+                        !teacherForm.get('emailId')?.valid }" />
+                    <span class="invalid-feedback">
+                        <span *ngIf="teacherForm.get('emailId')!.errors?.['required']">
+                            Please enter Email ID
+                        </span>
+                        <span *ngIf="teacherForm.get('emailId')!.errors?.['email']">
+                            Please enter valid Email ID
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div formGroupName="passwordGroup">
+                <div class="form-group row mb-2">
+                    <label class="col-md-2 col-form-label" for="passwordId">Password</label>
+                    <div class="col-md-8">
+                        <input class="form-control" id="passwordId" type="password"
+                            formControlName="password" [ngClass]="{'is-invalid': (teacherForm.get('passwordGroup.password')?.touched ||
+                        teacherForm.get('passwordGroup.password')?.dirty) &&
+                        !teacherForm.get('passwordGroup.password')?.valid }" />
+                        <span class="invalid-feedback">
+                            <span *ngIf="teacherForm.get('passwordGroup.password')!.errors?.['required']">
+                                Please enter Password
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-2">
+                    <label class="col-md-2 col-form-label" for="confPasswordId">Confirm Password</label>
+                    <div class="col-md-8">
+                        <input class="form-control" id="confPasswordId" type="password"
+                            formControlName="confPassword" [ngClass]="{'is-invalid': (teacherForm.get('passwordGroup.confPassword')?.touched ||
+                        teacherForm.get('passwordGroup.confPassword')?.dirty) &&
+                        !teacherForm.get('passwordGroup.confPassword')?.valid }" />
+                        <span class="invalid-feedback">
+                            <span *ngIf="teacherForm.get('passwordGroup.confPassword')!.errors?.['required']">
+                                Please re-enter Password
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <p></p>
+
+            <div class="form-group row mb-2">
+                <div class="offset-md-2 col-md-6">
+                    <button class="btn btn-primary btn-space" style="margin-right: 20px; width:120px;" type="submit"
+                        [title]="teacherForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                        [disabled]="!teacherForm.valid">
+                        Save
+                    </button>
+                    <!-- <button (click)="deleteTeacher()" class="btn btn-danger btn-space"
+                        style="margin-right: 20px; width:120px" type="button" title="Delete this sbject">
+                        Delete
+                    </button> -->
+                    <!-- <button class="btn btn-secondary btn-space" style="margin-right: 20px; width:120px;" type="button"
+                        title="Cancel your edits" [routerLink]="['/']">
+                        Cancel
+                    </button> -->
+                    <button class="btn btn-secondary btn-space" style="margin-right: 20px; width:120px;" type="button"
+                        title="Cancel your edits" (click)="goBackToPrevPage()">
+                        Cancel
+                    </button>
+
+
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

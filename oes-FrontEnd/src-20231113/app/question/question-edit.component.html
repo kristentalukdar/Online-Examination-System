@@ -1,0 +1,182 @@
+<div class="card">
+    <div class="card-header">
+        Question Details
+    </div>
+    <div class="card-body">
+        <form novalidate [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="questionId">Subject</label>
+                <div class="col-md-8">
+                    <select class="form-select" aria-label="Default select example"
+                        (change)="onSubjectSelected($event)">
+                        <option *ngFor="let subject of subjects" value="{{ subject.id }}"> {{ subject.name }} </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="questionId">Question</label>
+                <div class="col-md-8">
+                    <textarea class="form-control" id="questionId" type="text" placeholder="Question"
+                        formControlName="question" [ngClass]="{'is-invalid': (questionForm.get('question')?.touched ||
+                        questionForm.get('question')?.dirty) &&
+                        !questionForm.get('question')?.valid }"> </textarea>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="choice1Id">Choice 1</label>
+                <div class="col-md-6">
+                    <textarea class="form-control" id="choice1Id" type="text" placeholder="Choice 1"
+                        formControlName="choice1" [ngClass]="{'is-invalid': (questionForm.get('choice1')?.touched ||
+                        questionForm.get('choice1')?.dirty) &&
+                        !questionForm.get('choice1')?.valid }"> </textarea>
+                        <span class="invalid-feedback">
+                            <span *ngIf="questionForm.get('choice1')!.errors?.['required']">
+                                Please enter choice1
+                            </span>
+                            <span *ngIf="questionForm.get('choice1')!.errors?.['minlength']">
+                                choice1 should be of length 10
+                            </span>
+                            <span *ngIf="questionForm.get('choice1')!.errors?.['maxlength']">
+                                choice1 should be of length 10
+                            </span>
+                        </span>
+
+                </div>
+                <div class="col-md-2">
+                    <input class="form-check-input" type="checkbox" id="idchoice1Correct"
+                        formControlName="choice1correct">
+                    <label class="form-check-label" for="flexCheckIndeterminate">
+                        Correct Choice
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="choice2Id">Choice 2</label>
+                <div class="col-md-6">
+                    <textarea class="form-control" id="choice2Id" type="text" placeholder="Choice 2"
+                        formControlName="choice2" [ngClass]="{'is-invalid': (questionForm.get('choice2')?.touched ||
+                        questionForm.get('choice2')?.dirty) &&
+                        !questionForm.get('choice2')?.valid }"> </textarea>
+                        <span class="invalid-feedback">
+                            <span *ngIf="questionForm.get('choice2')!.errors?.['required']">
+                                Please enter choice2
+                            </span>
+                            <span *ngIf="questionForm.get('choice2')!.errors?.['minlength']">
+                                choice2 should be of length 10
+                            </span>
+                            <span *ngIf="questionForm.get('choice2')!.errors?.['maxlength']">
+                                choice2 should be of length 10
+                            </span>
+                        </span>
+    
+                    </div>
+                <div class="col-md-2">
+                    <input class="form-check-input" type="checkbox" id="idchoice2Correct"
+                        formControlName="choice2correct">
+                    <label class="form-check-label" for="flexCheckIndeterminate">
+                        Correct Choice
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="choice3Id">Choice 3</label>
+                <div class="col-md-6">
+                    <textarea class="form-control" id="choice3Id" type="text" placeholder="Choice 3"
+                        formControlName="choice3" [ngClass]="{'is-invalid': (questionForm.get('choice3')?.touched ||
+                        questionForm.get('choice3')?.dirty) &&
+                        !questionForm.get('choice3')?.valid }"> </textarea>
+                        <span class="invalid-feedback">
+                            <span *ngIf="questionForm.get('choice3')!.errors?.['required']">
+                                Please enter Choice3
+                            </span>
+                            <span *ngIf="questionForm.get('choice3')!.errors?.['minlength']">
+                                Choice3 should be of length 10
+                            </span>
+                            <span *ngIf="questionForm.get('choice3')!.errors?.['maxlength']">
+                                Choice3 should be of length 10
+                            </span>
+                        </span>
+    
+                </div>
+                <div class="col-md-2">
+                    <input class="form-check-input" type="checkbox" id="idchoice3Correct"
+                        formControlName="choice3correct">
+                    <label class="form-check-label" for="flexCheckIndeterminate">
+                        Correct Choice
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="choice4Id">Choice 4</label>
+                <div class="col-md-6">
+                    <textarea class="form-control" id="choice4Id" type="text" placeholder="Choice 4"
+                        formControlName="choice4" [ngClass]="{'is-invalid': (questionForm.get('choice4')?.touched ||
+                        questionForm.get('choice4')?.dirty) &&
+                        !questionForm.get('choice4')?.valid }"> </textarea>
+                    <span class="invalid-feedback">
+                        <span *ngIf="questionForm.get('choice4')!.errors?.['required']">
+                            Please enter Choice4
+                        </span>
+                        <span *ngIf="questionForm.get('choice4')!.errors?.['minlength']">
+                            Choice4 should be of length 10
+                        </span>
+                        <span *ngIf="questionForm.get('choice4')!.errors?.['maxlength']">
+                            Choice4 should be of length 10
+                        </span>
+                    </span>
+
+                </div>
+                <div class="col-md-2">
+                    <input class="form-check-input" type="checkbox" id="idchoice4Correct"
+                        formControlName="choice4correct">
+                    <label class="form-check-label" for="flexCheckIndeterminate">
+                        Correct Choice
+                    </label>
+                </div>
+            </div>
+
+            <!-- <div class="form-group row mb-2">
+                <div class="offset-md-2 col-md-6">
+                    <button class="btn btn-primary btn-space" style="width:80px;" type="submit"
+                        [title]="questionForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                        [disabled]="!questionForm.valid">
+                        Save
+                    </button>
+                    <button class="btn btn-secondary btn-space" style="width:80px;" type="button"
+                        title="Cancel your edits" [routerLink]="['/questionlist']">
+                        Cancel
+                    </button>
+                    <button (click)="deleteQuestion()" class="btn btn-warning btn-space" style="width:80px"
+                        type="button" title="Delete this sbject">
+                        Delete
+                    </button>
+                </div>
+            </div>
+             -->
+            <p></p>
+
+            <div class="form-group row mb-2">
+                <div class="offset-md-2 col-md-6">
+                    <button class="btn btn-primary btn-space" style="margin-right: 20px; width:120px;" type="submit"
+                        [title]="questionForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                        [disabled]="!questionForm.valid">
+                        Save
+                    </button>
+                    <!-- <button (click)="deleteQuestion()" class="btn btn-danger btn-space"
+                        style="margin-right: 20px; width:120px" type="button" title="Delete this Question">
+                        Delete
+                    </button> -->
+                    <button class="btn btn-secondary btn-space" style="margin-right: 20px; width:120px;" type="button"
+                        title="Cancel your edits" [routerLink]="['/questionlist']">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

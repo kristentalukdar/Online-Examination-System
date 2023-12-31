@@ -1,0 +1,99 @@
+<div class="card">
+    <div class="card-header">
+        Teacher Details
+    </div>
+    <div class="card-body">
+        <form novalidate [formGroup]="teacherForm">
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="teacherIdId">Teacher ID</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="teacherIdId" type="text" placeholder="Teacher ID" formControlName="teacherId"/>
+                    <span *ngIf="teacherForm.get('teacherId')!.errors?.['required']">
+                        Please enter Teacher ID 
+                    </span>
+                    <span *ngIf="teacherForm.get('teacherId')!.errors?.['minlength']">
+                        Teacher ID  should be of length 10
+                    </span>
+                    <span *ngIf="teacherForm.get('teacherId')!.errors?.['maxlength']">
+                        Teacher ID  should be of length 10
+                    </span>
+                </div>
+            </div> 
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="titleId">Title</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="titleId" type="text" placeholder="Title "formControlName="title" />
+                        <span *ngIf="teacherForm.get('title')!.errors?.['required']">
+                            Please enter Title
+                        </span>
+                </div>
+            </div> 
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="firstNameId">First Name</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="firstNameId" type="text" placeholder="First Name" formControlName="firstName"/>
+                    <span *ngIf="teacherForm.get('firstName')!.errors?.['required']">
+                        Please enter First Name
+                    </span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="middleNameId">Middle Name</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="middleNameId" type="text" placeholder="Middle Name" formControlName="middleName"/>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="lastNameId">Last Name</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="lastNameId" type="text" placeholder="Last Name" formControlName="lastName"/>
+                    <span *ngIf="teacherForm.get('lastName')!.errors?.['required']">
+                        Please enter Last Name
+                    </span>
+                </div>
+            </div>  
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="contactNoId">Contact Number</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="contactNoId" type="text" placeholder="Contact No" formControlName="contactNo"/>
+                    <span *ngIf="teacherForm.get('contactNo')!.errors?.['required']">
+                        Please enter Contact No 
+                    </span>
+                    <span *ngIf="teacherForm.get('contactNo')!.errors?.['minlength']">
+                        Contact No should be of length 10
+                    </span>
+                    <span *ngIf="teacherForm.get('contactNo')!.errors?.['maxlength']">
+                        Contact No should be of length 10
+                    </span>
+                </div>
+            </div> 
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="emailIdId">Email ID</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="emailIdId" type="text" placeholder="Email ID" formControlName="emailId"/>
+                    <span *ngIf="teacherForm.get('emailId')!.errors?.['required']">
+                        Please enter Email ID
+                    </span>
+                    <span *ngIf="teacherForm.get('emailId')!.errors?.['email']">
+                        Please enter valid Email ID
+                    </span>
+                </div>
+            </div> 
+
+            <div class="form-group row mb-2">
+                <div class="offset-md-5 col-md-4">
+                    <button class="btn btn-primary mr-3" type="submit" style="width:80px"
+                        [title]="teacherForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                        [disabled]="!teacherForm.valid">
+                        Save
+                    </button>
+                    <button class="btn btn-outline-secondary mr-3" type="button" style="width:80px">
+                    Cancel
+                    </button>
+                </div>
+            </div>
+                                 
+        </form>
+    </div>
+</div>

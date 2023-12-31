@@ -1,0 +1,58 @@
+JavaScript
+JavaScript DESC
+
+
+REG-1005
+Mr
+Manoj
+Kumar
+Talukdar
+1234567890
+mk_talukdar@gmail.com
+REG-1005
+REG-1005
+
+REG-T-2005
+Mrs
+Krishna
+K
+Narayana
+9876543210
+karishma@gmail.com
+REG-T-2005
+REG-T-2005
+
+
+Javascript is a _____ language.
+Programming
+Application
+Scripting *
+None of the above
+
+JavaScript is a _____ Side Scripting Language.
+Server
+Browser*
+ISP
+None of the above
+
+Which of the following purpose, JavaScript is designed for ?
+To Execute Query Related to DB on Server
+To Style HTML Pages
+To Perform Server Side Scripting Opertion
+To add interactivity to HTML Pages.*
+
+
+JavaScript can be written
+directly on the Server Script
+directly into HTML pages*
+All of the above
+None of the above
+
+JavaScript code is written inside file having extension
+.jvs
+.js*
+.jsc
+.javascript
+
+
+Dr.G Malarselvi

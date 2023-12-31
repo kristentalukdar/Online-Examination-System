@@ -1,0 +1,74 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <form novalidate (ngSubmit)="onSubmit()" [formGroup]="subjectForm">
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="subjectNameId">Subject Name</label>
+        <div class="col-md-8">
+          <input class="form-control" id="subjectNameId" type="text" formControlName="subjectName" [ngClass]="{'is-invalid': (subjectForm.get('subjectName')?.touched ||
+                        subjectForm.get('subjectName')?.dirty) &&
+                        !subjectForm.get('subjectName')?.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="subjectForm.get('subjectName')!.errors?.['required']">
+              Please enter Subject Name
+            </span>
+            <span *ngIf="subjectForm.get('subjectName')!.errors?.['minlength']">
+              Subject Name should be of length 10
+            </span>
+            <span *ngIf="subjectForm.get('subjectName')!.errors?.['maxlength']">
+              Subject Name should be of length 10
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="descriptionId">Description</label>
+        <div class="col-md-8">
+          <input class="form-control" id="descriptionId" type="text" placeholder="" formControlName="description"
+            [ngClass]="{'is-invalid': (subjectForm.get('description')?.touched ||
+          subjectForm.get('description')?.dirty) &&
+          !subjectForm.get('description')?.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="subjectForm.get('description')!.errors?.['required']">
+              Please enter Contact No
+            </span>
+            <span *ngIf="subjectForm.get('description')!.errors?.['minlength']">
+              Contact No should be of length 10
+            </span>
+            <span *ngIf="subjectForm.get('description')!.errors?.['maxlength']">
+              Contact No should be of length 10
+            </span>
+          </span>
+
+        </div>
+      </div>
+
+      <p></p>
+
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-6">
+          <button class="btn btn-primary btn-space" style="margin-right: 20px; width:120px;" type="submit"
+            [title]="subjectForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+            [disabled]="!subjectForm.valid">
+            Save
+          </button>
+          <!-- <button (click)="deleteSubject()" class="btn btn-danger btn-space" style="margin-right: 20px; width:120px" type="button"
+            title="Delete this sbject">
+            Delete
+          </button> -->
+          <button class="btn btn-secondary btn-space" style="margin-right: 20px; width:120px;" type="button"
+            title="Cancel your edits" [routerLink]="['/studentlist']">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}
+  </div>
+</div>

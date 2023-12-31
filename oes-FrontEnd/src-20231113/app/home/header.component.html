@@ -1,0 +1,134 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Online Examination System</a>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home">Home</a>
+      </li>
+      <div>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/subjectlist">Subject</a>
+        </li>
+      </div>
+
+
+      <div>
+        <li class="nav-item" style="float: right">
+          <a class="nav-link" routerLink="/studentlist">Student</a>
+        </li>
+      </div>
+
+      <div>
+        <li class="nav-item" style="float: right">
+          <a class="nav-link" routerLink="/teacherlist">Teacher</a>
+        </li>
+      </div>
+
+      <div>
+        <li class="nav-item" style="float: right">
+          <a class="nav-link" routerLink="/examlist">Examination</a>
+        </li>
+      </div>
+
+      <div>
+        <li class="nav-item" style="float: right">
+          <a class="nav-link" routerLink="/questionlist">Question</a>
+        </li>
+      </div>
+
+      <div>
+        <li class="nav-item" style="float: right">
+          <a class="nav-link" routerLink="/examwrite">Attempt Exam</a>
+        </li>
+      </div>
+
+      
+    </ul>
+  </div>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <div *ngIf="userLoggedIn===0">
+        <li class="nav-item" style="float: right">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+      </div>
+
+      <div *ngIf="userLoggedIn===1">
+        <li class="nav-item">
+          <a class="nav-link">{{userName}}</a>
+        </li>
+      </div>
+      <div *ngIf="userLoggedIn===1">
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+      </div>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+<!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Online Examination System</a>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home">Home</a>
+      </li>
+      <div *ngIf="userIsAdmin===1||userIsTeacher===1">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/subjectlist">Subject</a>
+        </li>
+      </div>
+
+
+      <div *ngIf="userIsAdmin===1||userIsTeacher===1">
+        <li class="nav-item" style="float: right">
+          <a class="nav-link" routerLink="/studentlist">Student</a>
+        </li>
+      </div>
+
+      <div *ngIf="userIsAdmin===1||userIsTeacher===1">
+        <li class="nav-item" style="float: right">
+          <a class="nav-link" routerLink="/teacherlist">Teacher</a>
+        </li>
+      </div>
+
+      <div *ngIf="userIsStudent===1">
+        <li class="nav-item" style="float: right">
+          <a class="nav-link" routerLink="/exam">Examination</a>
+        </li>
+      </div>
+
+      <div *ngIf="userIsTeacher===1">
+        <li class="nav-item" style="float: right">
+          <a class="nav-link" routerLink="/questionlist">Question</a>
+        </li>
+      </div>
+    </ul>
+  </div>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <div *ngIf="userLoggedIn===0">
+        <li class="nav-item" style="float: right">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+      </div>
+
+      <div *ngIf="userLoggedIn===1">
+        <li class="nav-item">
+          <a class="nav-link">{{userName}}</a>
+        </li>
+      </div>
+      <div *ngIf="userLoggedIn===1">
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+      </div>
+    </ul>
+  </div>
+</nav> -->

@@ -1,0 +1,114 @@
+<div class="card">
+    <div class="card-header">
+        {{ pageTitle }}
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <h5>ID</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.id }}</td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <h5>Registration No</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.registrationno }}</td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <h5>Title</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.title }}</td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <h5>First Name</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.firstName }}</td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <h5>Middle Name</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.middleName }}</td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <h5>Last Name</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.lastName }}</td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <h5>Contact No</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.contactNo }}</td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <h5>Email Id</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.emailId }}</td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <h5>Gender</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.gender }}</td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <h5>Street1</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.street1 }}</td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <h5>Street2</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.street2 }}</td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <h5>City</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.city }}</td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <h5>State</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.state }}</td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-2">
+                        <h5>Pincode</h5>
+                    </td>
+                    <td class="col-md-10"> {{ t.pincode }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="mb-3 row">
+            <div class="col-sm-10">
+                <button class="btn btn-primary btn-space" style="width:80px;" (click)="back()"> Back </button>
+            </div>
+        </div>
+    </div>
+</div>
